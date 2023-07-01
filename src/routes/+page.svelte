@@ -5,8 +5,8 @@
 				<a href="#section02"><span></span>
 			  </section>
         </div>
-		<div class="h-screen flex text items-center justify-center bg-mantle">
-			<dir class="grid grid-cols-1 animate__animated animate__fadeInLeftBig">
+		<div  class="h-screen flex text items-center justify-center bg-mantle">
+			<dir class="animate__animated animate__fadeInLeftBig">
 				<dir class="telegram">
 					<a href="https://t.me/invitedtohell">telegram</a>
 				</dir>
