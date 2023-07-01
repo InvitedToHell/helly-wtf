@@ -6,27 +6,27 @@
 			  </section>
         </div>
 		<div  class="h-screen flex text items-center justify-center bg-mantle">
-			<dir class="animate__animated animate__fadeInLeftBig">
-				<dir class="telegram">
+			<div class="animate__animated animate__fadeInLeftBig">
+				<div class="telegram">
 					<a href="https://t.me/invitedtohell">telegram</a>
-				</dir>
+				</div>
 				
-				<dir class="github">
+				<div class="github">
 					<a href="https://github.com/invitedtohell">github</a>
-				</dir>
+				</div>
 
-				<dir class="twitter">
+				<div class="twitter">
 					<a href="https://twitter.com/InvitedToHell">twitter</a>
-				</dir>
+				</div>
 
-				<dir class="email">
+				<div class="email">
 					<a href="emailto:info@helly.wtf">email</a>
-				</dir>
+				</div>
 
-				<dir class="planetmc">
+				<div class="planetmc">
 					<a href="https://www.planetminecraft.com/member/invitedtoheaven/">planetmc</a>
-				</dir>
-			</dir>
+				</div>
+			</div>
         </div>
 	</body>
 
