@@ -1,4 +1,4 @@
-<body class="bg-base text-text">
+<body class="bg-base text-text min-h-screen">
 		<div class="h-screen heading flex items-center justify-center">
             <h1 class="text-white animate__animated animate__fadeInLeftBig">Helly</h1>
 			<section id="section01" class="demo text-text">
