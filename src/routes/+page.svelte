@@ -5,7 +5,7 @@
 				<a href="#section02"><span></span>
 			  </section>
         </div>
-		<div  class="h-screen flex text items-center justify-center bg-mantle">
+		<div  class="h-screen flex text items-center justify-center bg-mantle text-white">
 			<div class="animate__animated animate__fadeInLeftBig">
 				<div class="telegram">
 					<a href="https://t.me/invitedtohell">telegram</a>
