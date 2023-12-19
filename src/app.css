@@ -9,6 +9,12 @@
   font-style: normal;
 }
 
+
+.transform {
+  transform: translateZ(360);
+
+}
+
 body {
   cursor: pointer;
   -webkit-user-select: none; /* Safari */        
@@ -23,6 +29,7 @@ body {
     font-size: 14rem;
     color: #ffffff;
     animation: glow 1s ease-in-out infinite alternate;
+    
   }
 
   .text {
@@ -119,15 +126,6 @@ body {
     }
   }
 
-  @keyframes idle {
-    from {
-      text-shadow: 0 0 20px #fff,
-    }
-  
-    to {
-      text-shadow: 0 0 90px #fff, 
-    }
-  }
 
   body {
     font-family: Recursive, monospace;
