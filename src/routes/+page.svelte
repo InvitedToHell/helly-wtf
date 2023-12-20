@@ -32,8 +32,8 @@
 </pre>
 
 <body class="bg-base text-text min-h-screen">
-  <div class="h-screen heading flex items-center justify-center">
-    <h1 class="text-white animate__animated animate__fadeInLeftBig transform">
+  <div class="h-screen heading lg:text-[14rem] flex items-center justify-center">
+    <h1 class="text-white animate__animated animate__fadeInLeftBig transform w-[90vw] text-center">
       Helly
     </h1>
     <section id="section01" class="demo text-text">
@@ -74,13 +74,13 @@
       >
         {#if $presence}
           <div
-            class="bg-crust text-text md rounded-md overflow-hidden w-[30vw] pt-5 pb-5"
+            class="bg-crust text-text md rounded-md overflow-hidden lg:w-[30vw] pt-5 pb-5"
           >
             <!-- User Avatar -->
             <div class="flex flex-auto justify-center items-center">
               <div class="p-1">
                 <img
-                  class="w-20 h-20 rounded-full mx-auto border-solid border-4"
+                  class="!w-20 !h-20 rounded-full mx-auto border-solid border-4"
                   style="border-color: {borderColor};"
                   src="https://cdn.discordapp.com/avatars/{$presence
                     .discord_user.id}/{$presence.discord_user.avatar}"

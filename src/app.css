@@ -3,155 +3,231 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Victor Mono';
-  src: url('/fonts/victormono-italic-webfont.woff') format('woff2');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Victor Mono';
+	src: url('/fonts/victormono-italic-webfont.woff') format('woff2');
+	font-weight: normal;
+	font-style: normal;
 }
 
-
 .transform {
-  transform: translateZ(360);
-
+	transform: translateZ(360);
 }
 
 body {
-  cursor: pointer;
-  -webkit-user-select: none; /* Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
-
+	cursor: pointer;
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 }
 
 .heading {
-    font-family: 'Victor Mono', monospace;
-    font-size: 14rem;
-    color: #ffffff;
-    animation: glow 1s ease-in-out infinite alternate;
-    
-  }
+	font-family: 'Victor Mono', monospace;
+	font-size: 7rem;
+	color: #ffffff;
+	animation: glow 1s ease-in-out infinite alternate;
+}
 
-  .text {
-    font-family: 'Victor Mono', monospace;
-    font-size: 5rem;
-    color: text;
-  }
+.text {
+	font-family: 'Victor Mono', monospace;
+	font-size: 5rem;
+	color: text;
+}
 
+.telegram:hover {
+	color: white;
+	animation: telegram 1s ease-in-out infinite alternate;
+}
 
-  .telegram:hover {
-    color: white;
-    animation: telegram 1s ease-in-out infinite alternate;
+@keyframes telegram {
+	from {
+		text-shadow:
+			0 0 10px #fff,
+			0 0 20px #fff,
+			0 0 30px #f9e2af,
+			0 0 40px #f9e2af,
+			0 0 50px #f9e2af,
+			0 0 60px #f9e2af,
+			0 0 70px #f9e2af;
+	}
 
-  }
+	to {
+		text-shadow:
+			0 0 20px #fff,
+			0 0 30px #f9e2af,
+			0 0 40px #f9e2af,
+			0 0 50px #f9e2af,
+			0 0 60px #f9e2af,
+			0 0 70px #f9e2af,
+			0 0 80px #f9e2af;
+	}
+}
 
-  @keyframes telegram {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f9e2af, 0 0 40px #f9e2af, 0 0 50px #f9e2af, 0 0 60px #f9e2af, 0 0 70px #f9e2af;
-    }
-  
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #f9e2af, 0 0 40px #f9e2af, 0 0 50px #f9e2af, 0 0 60px #f9e2af, 0 0 70px #f9e2af, 0 0 80px #f9e2af;
-    }
-  }
+.github:hover {
+	color: white;
+	animation: github 1s ease-in-out infinite alternate;
+}
 
-  .github:hover  {
-    color: white;
-    animation: github 1s ease-in-out infinite alternate;
-  }
+@keyframes github {
+	from {
+		text-shadow:
+			0 0 10px #fff,
+			0 0 20px #fff,
+			0 0 30px #a6e3a1,
+			0 0 40px #a6e3a1,
+			0 0 50px #a6e3a1,
+			0 0 60px #a6e3a1,
+			0 0 70px #a6e3a1;
+	}
 
-  @keyframes github {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #a6e3a1, 0 0 40px #a6e3a1, 0 0 50px #a6e3a1, 0 0 60px #a6e3a1, 0 0 70px #a6e3a1;
-    }
-  
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #a6e3a1, 0 0 40px #a6e3a1, 0 0 50px #a6e3a1, 0 0 60px #a6e3a1, 0 0 70px #a6e3a1, 0 0 80px #a6e3a1;
-    }
-  }
+	to {
+		text-shadow:
+			0 0 20px #fff,
+			0 0 30px #a6e3a1,
+			0 0 40px #a6e3a1,
+			0 0 50px #a6e3a1,
+			0 0 60px #a6e3a1,
+			0 0 70px #a6e3a1,
+			0 0 80px #a6e3a1;
+	}
+}
 
-  .twitter:hover  {
-    color: white;
-    animation: twitter 1s ease-in-out infinite alternate;
-  }
+.twitter:hover {
+	color: white;
+	animation: twitter 1s ease-in-out infinite alternate;
+}
 
 @keyframes twitter {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #94e2d5, 0 0 40px #94e2d5, 0 0 50px #94e2d5, 0 0 60px #94e2d5, 0 0 70px #94e2d5;
-    }
-  
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #94e2d5, 0 0 40px #94e2d5, 0 0 50px #94e2d5, 0 0 60px #94e2d5, 0 0 70px #94e2d5, 0 0 80px #94e2d5;
-    }
-  }
+	from {
+		text-shadow:
+			0 0 10px #fff,
+			0 0 20px #fff,
+			0 0 30px #94e2d5,
+			0 0 40px #94e2d5,
+			0 0 50px #94e2d5,
+			0 0 60px #94e2d5,
+			0 0 70px #94e2d5;
+	}
 
-   .email:hover  {
-    color: white;
-    animation: email 1s ease-in-out infinite alternate;
-  }
+	to {
+		text-shadow:
+			0 0 20px #fff,
+			0 0 30px #94e2d5,
+			0 0 40px #94e2d5,
+			0 0 50px #94e2d5,
+			0 0 60px #94e2d5,
+			0 0 70px #94e2d5,
+			0 0 80px #94e2d5;
+	}
+}
 
-  @keyframes email {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #74c7ec, 0 0 40px #74c7ec, 0 0 50px #74c7ec, 0 0 60px #74c7ec, 0 0 70px #74c7ec;
-    }
-  
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #74c7ec, 0 0 40px #74c7ec, 0 0 50px #74c7ec, 0 0 60px #74c7ec, 0 0 70px #74c7ec, 0 0 80px #74c7ec;
-    }
-  }
+.email:hover {
+	color: white;
+	animation: email 1s ease-in-out infinite alternate;
+}
 
-  .planetmc:hover  {
-    color: white;
-    animation: planetmc 1s ease-in-out infinite alternate;
-  }
-  
-  @keyframes planetmc {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #89b4fa, 0 0 40px #89b4fa, 0 0 50px #89b4fa, 0 0 60px #89b4fa, 0 0 70px #89b4fa;
-    }
-  
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #89b4fa, 0 0 40px #89b4fa, 0 0 50px #89b4fa, 0 0 60px #89b4fa, 0 0 70px #89b4fa, 0 0 80px #89b4fa;
-    }
-  }
+@keyframes email {
+	from {
+		text-shadow:
+			0 0 10px #fff,
+			0 0 20px #fff,
+			0 0 30px #74c7ec,
+			0 0 40px #74c7ec,
+			0 0 50px #74c7ec,
+			0 0 60px #74c7ec,
+			0 0 70px #74c7ec;
+	}
 
+	to {
+		text-shadow:
+			0 0 20px #fff,
+			0 0 30px #74c7ec,
+			0 0 40px #74c7ec,
+			0 0 50px #74c7ec,
+			0 0 60px #74c7ec,
+			0 0 70px #74c7ec,
+			0 0 80px #74c7ec;
+	}
+}
 
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #cba6f7, 0 0 40px #cba6f7, 0 0 50px #cba6f7, 0 0 60px #cba6f7, 0 0 70px #cba6f7;
-    }
-  
-    to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #cba6f7, 0 0 40px #cba6f7, 0 0 50px #cba6f7, 0 0 60px #cba6f7, 0 0 70px #cba6f7, 0 0 80px #cba6f7;
-    }
-  }
+.planetmc:hover {
+	color: white;
+	animation: planetmc 1s ease-in-out infinite alternate;
+}
 
+@keyframes planetmc {
+	from {
+		text-shadow:
+			0 0 10px #fff,
+			0 0 20px #fff,
+			0 0 30px #89b4fa,
+			0 0 40px #89b4fa,
+			0 0 50px #89b4fa,
+			0 0 60px #89b4fa,
+			0 0 70px #89b4fa;
+	}
 
-  body {
-    font-family: Recursive, monospace;
-  }
+	to {
+		text-shadow:
+			0 0 20px #fff,
+			0 0 30px #89b4fa,
+			0 0 40px #89b4fa,
+			0 0 50px #89b4fa,
+			0 0 60px #89b4fa,
+			0 0 70px #89b4fa,
+			0 0 80px #89b4fa;
+	}
+}
 
-  @keyframes opacity {
-    from {
-      opacity: 20%;
-    }
-  
-    to {
-      opacity: 100%;
-    }
-  }
+@keyframes glow {
+	from {
+		text-shadow:
+			0 0 10px #fff,
+			0 0 20px #fff,
+			0 0 30px #cba6f7,
+			0 0 40px #cba6f7,
+			0 0 50px #cba6f7,
+			0 0 60px #cba6f7,
+			0 0 70px #cba6f7;
+	}
 
-  #section01 a span {
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    width: 24px;
-    height: 24px;
-    margin-left: -12px;
-    border-left: 1px solid;
-    border-bottom: 1px solid;
-    -webkit-transform: rotate(-45deg);
-    transform: rotate(-45deg);
-    box-sizing: border-box;
-    animation: opacity 2s ease-in-out infinite alternate;
-  }
+	to {
+		text-shadow:
+			0 0 20px #fff,
+			0 0 30px #cba6f7,
+			0 0 40px #cba6f7,
+			0 0 50px #cba6f7,
+			0 0 60px #cba6f7,
+			0 0 70px #cba6f7,
+			0 0 80px #cba6f7;
+	}
+}
+
+body {
+	font-family: Recursive, monospace;
+}
+
+@keyframes opacity {
+	from {
+		opacity: 20%;
+	}
+
+	to {
+		opacity: 100%;
+	}
+}
+
+#section01 a span {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	width: 24px;
+	height: 24px;
+	margin-left: -12px;
+	border-left: 1px solid;
+	border-bottom: 1px solid;
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	box-sizing: border-box;
+	animation: opacity 2s ease-in-out infinite alternate;
+}
