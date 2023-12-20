@@ -1,5 +1,6 @@
 <script lang="ts">
-  import { useLanyard } from "sk-lanyard";
+  import { useLanyard } from "$lib/lanyard";
+
   const presence = useLanyard({ method: "rest", id: "469514043053309952" });
   let borderColor = "#747f8d";
   let largeActivityImage: string;
