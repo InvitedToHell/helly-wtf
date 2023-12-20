@@ -13,7 +13,6 @@ module.exports = {
 		'latte'
 	],
 	plugins: [
-		require('@tailwindcss/forms'),
 		require('@catppuccin/tailwindcss')({
 			prefix: false,
 			defaultFlavour: 'mocha'
