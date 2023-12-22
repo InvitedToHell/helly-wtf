@@ -6,11 +6,6 @@
   let largeActivityImage: string;
   function updateBorderColor(prsnce: any) {
     if ($presence !== undefined) {
-      if ($presence.activities.length > 1) {
-      const largeImage = $presence.activities[1].assets.large_image;
-      largeActivityImage =
-        "https://" + largeImage.substring(largeImage.indexOf("https/") + 6);
-        }
       if ($presence.discord_status === "streaming") {
         borderColor = "#593695";
       } else if ($presence.discord_status === "idle") {
@@ -26,6 +21,41 @@
       }
     }
   }
+
+  function updateActivityImage(prsnce: any) {
+    if ($presence !== undefined) {
+      if ($presence.activities.length > 1 && $presence.activities[1].assets) {
+        const largeImage = $presence.activities[1].assets.large_image;
+        largeActivityImage =
+          "https://" + largeImage.substring(largeImage.indexOf("https/") + 6);
+      }
+    }
+  }
+
+
+  
+  function timeStamps() {
+    if ($presence !== undefined) {
+      if ($presence.activities.length > 1 && $presence.activities[1].timestamps) {
+        const start = $presence.activities[1].timestamps.start;
+        console.log(JSON.stringify($presence.activities[1].timestamps));
+        const elapsed = Math.floor(Date.now() / 1000) - start / 1000;
+        let hours: any = Math.floor(elapsed / 3600);
+        if (hours < 10) hours = '0' + hours;
+        let minutes: any = Math.floor((elapsed - hours * 3600) / 60);
+        if (minutes < 10) minutes = '0' + minutes;
+        let seconds: any = Math.floor(elapsed - hours * 3600 - minutes * 60);
+        if (seconds < 10) seconds = '0' + seconds;
+        if (hours === '00') {
+          return "for " + minutes + "min";
+        }
+        else {
+        return "for " + hours + "h " + minutes + "min";
+      }
+      }
+    }
+  }
+  $: updateActivityImage($presence);
   $: updateBorderColor($presence);
 </script>
 
@@ -105,6 +135,7 @@
                 {$presence.activities[1].name}
               </p>
               <div class="flex row-auto justify-center items-center">
+                {#if $presence.activities[1].assets}
                 <img
                   class="p-0.5"
                   src={largeActivityImage}
@@ -112,14 +143,24 @@
                   width="60"
                   height="60"
                 />
+                {/if}
                 <!-- User Activity Image -->
                 <div class="flex-col flex">
+                  {#if $presence.activities[1].state}
                   <p class="text-text text-xl text-center content-center">
                     {$presence.activities[1].state}
                   </p>
+                  {/if}
+                  {#if $presence.activities[1].details}
                   <p class="text-text text-xl text-center content-center">
                     {$presence.activities[1].details}
                   </p>
+                  {/if}
+                  {#if $presence.activities[1].timestamps}
+                  <p class="text-text text-xl text-center content-center">
+                    {timeStamps()}
+                  </p>
+                  {/if}
                 </div>
                   
               </div>
