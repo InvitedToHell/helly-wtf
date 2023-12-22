@@ -6,9 +6,11 @@
   let largeActivityImage: string;
   function updateBorderColor(prsnce: any) {
     if ($presence !== undefined) {
+      if ($presence.activities.length > 1) {
       const largeImage = $presence.activities[1].assets.large_image;
       largeActivityImage =
         "https://" + largeImage.substring(largeImage.indexOf("https/") + 6);
+        }
       if ($presence.discord_status === "streaming") {
         borderColor = "#593695";
       } else if ($presence.discord_status === "idle") {
@@ -94,6 +96,8 @@
               </div>
             </div>
             <!-- User Activity -->
+            {#if $presence.activities.length > 1}
+
             <div class="px-6 py-4">
               <p
                 class="font-semibold text-purple mb-2 text-2xl text-center content-center"
@@ -117,8 +121,12 @@
                     {$presence.activities[1].details}
                   </p>
                 </div>
+                  
               </div>
             </div>
+            {:else}
+                  <p class="pt-5 text-text text-xl text-center content-center">Currently doing nothing!</p> 
+                  {/if}
           </div>
         {/if}
       </div>
