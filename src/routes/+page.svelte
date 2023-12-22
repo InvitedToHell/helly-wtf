@@ -4,6 +4,7 @@
   const presence = useLanyard({ method: "rest", id: "469514043053309952" });
   let borderColor = "#747f8d";
   let largeActivityImage: string;
+  let time: string;
   function updateBorderColor(prsnce: any) {
     if ($presence !== undefined) {
       if ($presence.discord_status === "streaming") {
@@ -25,16 +26,24 @@
   function updateActivityImage(prsnce: any) {
     if ($presence !== undefined) {
       if ($presence.activities.length > 1 && $presence.activities[1].assets) {
+        if ($presence.activities[1].assets.large_image.includes("spotify")) {
+        const largeImage = $presence.activities[1].assets.large_image.substring(
+            $presence.activities[1].assets.large_image.indexOf(":") + 1);
+        largeActivityImage = "https://i.scdn.co/image/" + largeImage;
+        }
+        else {
         const largeImage = $presence.activities[1].assets.large_image;
         largeActivityImage =
           "https://" + largeImage.substring(largeImage.indexOf("https/") + 6);
-      }
+          console.log(largeActivityImage);
+        }
     }
   }
+}
 
 
   
-  function timeStamps() {
+  function timeStamps(prsnce: any) {
     if ($presence !== undefined) {
       if ($presence.activities.length > 1 && $presence.activities[1].timestamps) {
         const start = $presence.activities[1].timestamps.start;
@@ -47,16 +56,17 @@
         let seconds: any = Math.floor(elapsed - hours * 3600 - minutes * 60);
         if (seconds < 10) seconds = '0' + seconds;
         if (hours === '00') {
-          return "for " + minutes + "min";
+          time = "for " + minutes + "min";
         }
         else {
-        return "for " + hours + "h " + minutes + "min";
-      }
+          time = "for " + hours + "h " + minutes + "min";
+        }
       }
     }
   }
   $: updateActivityImage($presence);
   $: updateBorderColor($presence);
+  $: timeStamps($presence);
 </script>
 
 <pre>
@@ -106,10 +116,10 @@
       >
         {#if $presence}
           <div
-            class="bg-crust text-text md rounded-md overflow-hidden lg:w-[30vw] pt-5 pb-5"
+            class="bg-crust text-text md rounded-lg overflow-hidden lg:w-[30vw] pt-5 pb-5"
           >
             <!-- User Avatar -->
-            <div class="flex flex-auto justify-center items-center">
+            <div class="flex flex-auto justify-left pl-5 items-left">
               <div class="p-1">
                 <img
                   class="!w-20 !h-20 rounded-full mx-auto border-solid border-4"
@@ -119,9 +129,12 @@
                 />
               </div>
               <!-- User Information -->
-              <div class="text-center px-6 py-4">
-                <h2 class="text-3xl mb-2">
+              <div class="text-left px-2 flex flex-col content-center justify-center">
+                <h2 class="text-3xl">
                   {$presence.discord_user.username}
+                </h2>
+                <h2 class="text-2xl" style="color: {borderColor}">
+                  {$presence.discord_status}
                 </h2>
               </div>
             </div>
@@ -130,40 +143,43 @@
 
             <div class="px-6 py-4">
               <p
-                class="font-semibold text-purple mb-2 text-2xl text-center content-center"
+                class="font-semibold text-purple mb-2 text-2xl text-left"
               >
                 {$presence.activities[1].name}
               </p>
-              <div class="flex row-auto justify-center items-center">
+
+
+              <div class="flex row-auto items-center">
                 {#if $presence.activities[1].assets}
                 <img
-                  class="p-0.5"
+                  class=""
                   src={largeActivityImage}
                   alt=""
-                  width="60"
-                  height="60"
+                  width="70"
+                  height="70"
                 />
                 {/if}
                 <!-- User Activity Image -->
-                <div class="flex-col flex">
+                <div class="flex-col flex-auto pl-5">
                   {#if $presence.activities[1].state}
-                  <p class="text-text text-xl text-center content-center">
+                  <p class="text-text text-lg text-left content-center">
                     {$presence.activities[1].state}
                   </p>
                   {/if}
                   {#if $presence.activities[1].details}
-                  <p class="text-text text-xl text-center content-center">
+                  <p class="text-text text-lg text-left content-center">
                     {$presence.activities[1].details}
                   </p>
                   {/if}
                   {#if $presence.activities[1].timestamps}
-                  <p class="text-text text-xl text-center content-center">
-                    {timeStamps()}
+                  <p class="text-text text-sm text-left content-center">
+                    {time}
                   </p>
                   {/if}
-                </div>
-                  
+                </div>    
               </div>
+
+
             </div>
             {:else}
                   <p class="pt-5 text-text text-xl text-center content-center">Currently doing nothing!</p> 
