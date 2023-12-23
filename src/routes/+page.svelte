@@ -6,7 +6,8 @@
 	let largeActivityImage: string;
 	let largeActivityImage2: string;
 	let time: string;
-	let active: string;
+	let active1: string;
+	let active2: string;
 	function updateBorderColor(prsnce: any) {
 		if ($presence !== undefined) {
 			if ($presence.discord_status === 'streaming') {
@@ -33,18 +34,27 @@
 						$presence.activities[1].assets.large_image.indexOf(':') + 1
 					);
 					largeActivityImage = 'https://i.scdn.co/image/' + largeImage1;
-					active = 'spotify';
+					active1 = 'spotify';
 				} else {
 					const largeImage1 = $presence.activities[1].assets.large_image;
 					largeActivityImage =
 						'https://' + largeImage1.substring(largeImage1.indexOf('https/') + 6);
-					active = 'other';
+					active1 = 'other';
 				}
-				if ($presence.activities[2] && $presence.activities[2].assets) {
-					const largeImage2 = $presence.activities[2].assets.large_image;
-					largeActivityImage2 =
-						'https://' + largeImage2.substring(largeImage2.indexOf('https/') + 6);
-				}
+				if ($presence.activities.length > 2 && $presence.activities[2].assets)
+					if ($presence.activities[2].assets.large_image.includes('spotify')) {
+						const largeImage2 = $presence.activities[2].assets.large_image.substring(
+							$presence.activities[2].assets.large_image.indexOf(':') + 1
+						);
+						largeActivityImage2 = 'https://i.scdn.co/image/' + largeImage2;
+						active2 = 'spotify';
+					} else {
+						const largeImage2 = $presence.activities[2].assets.large_image;
+						largeActivityImage2 =
+							'https://' + largeImage2.substring(largeImage2.indexOf('https/') + 6);
+						active2 = 'other';
+					}
+				console.log(largeActivityImage + ' ' + largeActivityImage2);
 			}
 		}
 	}
@@ -160,7 +170,7 @@
 												{$presence.activities[1].details}
 											</p>
 										{/if}
-										{#if $presence.activities[1].timestamps && active === 'other'}
+										{#if $presence.activities[1].timestamps && active1 === 'other'}
 											<p class="text-text text-sm text-left content-center">
 												{time}
 											</p>
@@ -168,9 +178,9 @@
 									</div>
 								</div>
 							</div>
-						{:else}
-							<p class="pt-5 text-text text-xl text-center content-center">
-								Currently doing nothing!
+						{:else if $presence.activities.length === 1 && $presence.discord_status !== 'offline'}
+							<p class="pt-5 text-text text-xl text-left content-center px-6">
+								Currently doing nothing.
 							</p>
 						{/if}
 
@@ -195,7 +205,7 @@
 												{$presence.activities[2].details}
 											</p>
 										{/if}
-										{#if $presence.activities[2].timestamps && active === 'other'}
+										{#if $presence.activities[2].timestamps && active2 === 'other'}
 											<p class="text-text text-sm text-left content-center">
 												{time}
 											</p>
