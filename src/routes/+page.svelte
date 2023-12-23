@@ -99,24 +99,24 @@
 		</section>
 	</div>
 	<div class="h-screen flex text items-center justify-center bg-mantle text-[#cdd6f4]">
-		<div class="animate__animated animate__fadeInLeftBig">
-			<div class="telegram transform">
+		<div class="animate__animated animate__fadeInLeftBig text-text">
+			<div class="telegram transform hover:text-white">
 				<a href="https://t.me/invitedtohell">telegram</a>
 			</div>
 
-			<div class="github transform">
+			<div class="github transform hover:text-white">
 				<a href="https://github.com/invitedtohell">github</a>
 			</div>
 
-			<div class="twitter transform">
+			<div class="twitter transform hover:text-white">
 				<a href="https://twitter.com/InvitedToHell">twitter</a>
 			</div>
 
-			<div class="email transform">
+			<div class="email transform hover:text-white">
 				<a href="emailto:info@helly.wtf">email</a>
 			</div>
 
-			<div class="planetmc transform">
+			<div class="planetmc transform hover:text-white">
 				<a href="https://www.planetminecraft.com/member/invitedtoheaven/">planetmc</a>
 			</div>
 		</div>
