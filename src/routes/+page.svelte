@@ -66,13 +66,14 @@
 				console.log(JSON.stringify($presence.activities[1].timestamps));
 				const elapsed = Math.floor(Date.now() / 1000) - start / 1000;
 				let hours: any = Math.floor(elapsed / 3600);
-				if (hours < 10) hours = '0' + hours;
 				let minutes: any = Math.floor((elapsed - hours * 3600) / 60);
-				if (minutes < 10) minutes = '0' + minutes;
 				let seconds: any = Math.floor(elapsed - hours * 3600 - minutes * 60);
-				if (seconds < 10) seconds = '0' + seconds;
-				if (hours === '00') {
-					time = 'for ' + minutes + 'min';
+				if (hours == '0') {
+					if (minutes == '0') {
+						time = 'for ' + seconds + 's';
+					} else {
+						time = 'for ' + minutes + 'min';
+					}
 				} else {
 					time = 'for ' + hours + 'h ' + minutes + 'min';
 				}
