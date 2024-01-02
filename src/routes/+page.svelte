@@ -131,6 +131,7 @@
 			</div>
 		</div>
 	</div>
+	<!-- Lanyard -->
 	<div class="h-screen flex text items-center justify-center bg-mantle">
 		<div class="animate__animated animate__fadeInLeftBig items-center">
 			<div class="animate__animated animate__fadeInLeftBig items-center w-max h-max">
