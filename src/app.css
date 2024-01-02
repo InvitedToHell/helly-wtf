@@ -9,6 +9,27 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: 'Victor Mono Regular';
+	src: url('/fonts/victormono-regular-webfont.woff') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Victor Mono Medium';
+	src: url('/fonts/victormono-medium-webfont.woff') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Victor Mono Bold';
+	src: url('/fonts/victormono-bold-webfont.woff') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+}
+
 .transform {
 	transform: translateZ(360);
 }
@@ -230,4 +251,16 @@ body {
 	transform: rotate(-45deg);
 	box-sizing: border-box;
 	animation: opacity 2s ease-in-out infinite alternate;
+}
+
+.regular {
+	font-family: 'Victor Mono Regular', monospace;
+}
+
+.medium {
+	font-family: 'Victor Mono Medium', monospace;
+}
+
+.bold {
+	font-family: 'Victor Mono Bold', monospace;
 }
