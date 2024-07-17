@@ -100,10 +100,20 @@
 </pre>
 
 <body class="bg-base text-text min-h-screen">
-	<div class="h-screen heading lg:text-[14rem] flex items-center justify-center">
-		<h1 class="text-white animate__animated animate__fadeInLeftBig transform w-[90vw] text-center">
-			Helly
-		</h1>
+	<div class="h-screen lg:text-[14rem] items-center justify-center flex">
+		<div>
+			<h1
+				class="heading text-white animate__animated animate__fadeInLeftBig transform w-[90vw] text-center"
+			>
+				Helly
+			</h1>
+			<div class="text-center text-lg">
+				<a href="https://ctp-webr.ing/helly/previous">&larr; </a><a href="https://ctp-webr.ing/"
+					>Catppuccin webring
+				</a><a href="https://ctp-webr.ing/helly/next"> &rarr;</a>
+			</div>
+		</div>
+
 		<section id="section01" class="demo text-text">
 			<a href="#section02"><span /> </a>
 		</section>

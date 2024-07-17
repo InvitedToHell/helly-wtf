@@ -44,7 +44,7 @@ body {
 
 .heading {
 	font-family: 'Victor Mono', monospace;
-	font-size: 7rem;
+	font-size: 14rem;
 	color: #ffffff;
 	animation: glow 1s ease-in-out infinite alternate;
 }
