@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Model from '$lib/components/Model.svelte';
 	import { useLanyard } from '$lib/lanyard';
 
 	const presence = useLanyard({ method: 'rest', id: '469514043053309952' });
@@ -102,11 +103,15 @@
 <body class="bg-base text-text min-h-screen">
 	<div class="h-screen lg:text-[14rem] items-center justify-center flex">
 		<div>
-			<h1
+			<!--<h1
 				class="heading text-white animate__animated animate__fadeInLeftBig transform w-[90vw] text-center"
 			>
 				Helly
-			</h1>
+			</h1>-->
+			<div class="animate__animated animate__fadeInLeftBig transform w-[60vw] text-center">
+				<Model />
+			</div>
+
 			<div class="text-center text-lg">
 				<a href="https://ctp-webr.ing/helly/previous">&larr; </a><a href="https://ctp-webr.ing/"
 					>Catppuccin webring
