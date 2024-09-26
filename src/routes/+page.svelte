@@ -123,7 +123,9 @@
 			<a href="#section02"><span /> </a>
 		</section>
 	</div>
-	<div class="h-screen flex text items-center justify-center bg-mantle text-[#cdd6f4]">
+	<div
+		class="h-screen flex text items-center justify-center bg-mantle text-[#cdd6f4] md:text-[5rem]"
+	>
 		<div class="animate__animated animate__fadeInLeftBig text-text">
 			<div class="telegram transform hover:text-white">
 				<a href="https://t.me/invitedtohell">telegram</a>
