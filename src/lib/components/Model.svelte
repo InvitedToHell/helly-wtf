@@ -10,4 +10,5 @@
 	});
 </script>
 
-<spline-viewer url="https://prod.spline.design/aghPxpUjHieumGOR/scene.splinecode"></spline-viewer>
+<spline-viewer loading="eager" url="https://prod.spline.design/aghPxpUjHieumGOR/scene.splinecode"
+></spline-viewer>
