@@ -10,5 +10,7 @@
 	});
 </script>
 
-<spline-viewer loading="eager" url="https://prod.spline.design/aghPxpUjHieumGOR/scene.splinecode"
-></spline-viewer>
+<a title="made by @jassibuum">
+	<spline-viewer loading="eager" url="https://prod.spline.design/aghPxpUjHieumGOR/scene.splinecode"
+	></spline-viewer>
+</a>
