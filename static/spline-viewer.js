@@ -38580,7 +38580,7 @@ var P7 = () =>
 		let e = new URLSearchParams(window.location.search).get('desktop-app-version');
 		return e
 			? (window.localStorage.setItem('desktop-app-version', e), e)
-			: window.localStorage.getItem('desktop-app-version') ?? '0.0.6';
+			: (window.localStorage.getItem('desktop-app-version') ?? '0.0.6');
 	},
 	O3 = P7(),
 	Lae = O3 ? z7() : void 0,
@@ -42323,7 +42323,9 @@ var iu;
 			targetOffset: e.DefaultTargetOffset
 		});
 	function t(i) {
-		return i.type === 'PerspectiveCamera' ? i.perspective?.zoom ?? 1 : i.orthographic?.zoom ?? 1;
+		return i.type === 'PerspectiveCamera'
+			? (i.perspective?.zoom ?? 1)
+			: (i.orthographic?.zoom ?? 1);
 	}
 	e.getZoom = t;
 })(iu || (iu = {}));
@@ -42578,12 +42580,12 @@ var VA;
 		if ('material' in i) {
 			let a =
 				typeof i.material == 'string'
-					? r.materials[i.material] ?? r.lib.materials[i.material]?.asset
+					? (r.materials[i.material] ?? r.lib.materials[i.material]?.asset)
 					: i.material;
 			a && s.push(a);
 		} else if ('materials' in i)
 			for (let a of i.materials) {
-				let n = typeof a == 'string' ? r.materials[a] ?? r.lib.materials[a]?.asset : a;
+				let n = typeof a == 'string' ? (r.materials[a] ?? r.lib.materials[a]?.asset) : a;
 				n && s.push(n);
 			}
 		return s;
@@ -45673,15 +45675,13 @@ function yY(e, t, i, r, s) {
 }
 var no = 32,
 	xY = (e, t) => e.candidate - t.candidate,
-	Zo = new Array(no)
-		.fill()
-		.map(() => ({
-			count: 0,
-			bounds: new Float32Array(6),
-			rightCacheBounds: new Float32Array(6),
-			leftCacheBounds: new Float32Array(6),
-			candidate: 0
-		})),
+	Zo = new Array(no).fill().map(() => ({
+		count: 0,
+		bounds: new Float32Array(6),
+		rightCacheBounds: new Float32Array(6),
+		leftCacheBounds: new Float32Array(6),
+		candidate: 0
+	})),
 	Of = new Float32Array(6);
 function bY(e, t, i, r, s, a) {
 	let n = -1,
@@ -59206,10 +59206,10 @@ layout(location = 1) out vec4 gVelocity;
 		get value() {
 			return (
 				(this._value.x = this.image.isVideo
-					? this.image.img.videoWidth ?? 0
+					? (this.image.img.videoWidth ?? 0)
 					: this.image.img.width),
 				(this._value.y = this.image.isVideo
-					? this.image.img.videoHeight ?? 0
+					? (this.image.img.videoHeight ?? 0)
 					: this.image.img.height),
 				this._value
 			);
@@ -64106,7 +64106,7 @@ var Ah = (e, t, i) =>
 			if (i.type === 'texture' || i.type === 'video') {
 				let s =
 						i.type === 'texture'
-							? r.uiBuffer(i.texture.image) ?? r.image(i.texture.image)
+							? (r.uiBuffer(i.texture.image) ?? r.image(i.texture.image))
 							: r.video(i.texture.video),
 					a = new dx(
 						s,
@@ -64315,7 +64315,7 @@ var Ah = (e, t, i) =>
 			} else {
 				s = new oZ();
 				let c = new ht(i.shininess ?? 30),
-					u = new rr(i.specular !== void 0 ? r.color(i.specular) ?? 1118481 : 1118481),
+					u = new rr(i.specular !== void 0 ? (r.color(i.specular) ?? 1118481) : 1118481),
 					d = new Os(i.occlusion ?? !0);
 				(h = { shininess: c, specular: u, occlusion: d }),
 					(s.shininess = c),
@@ -93733,7 +93733,7 @@ var Jse = new O(0, 0, 1),
 			if (((this.virtualInput = e), this.updateTextInputStyles(), this.htmlInput))
 				if (e) {
 					let t = this.data?.geometry.text;
-					this.htmlInput.value = typeof t == 'string' ? '' : t?.textValue.toString() ?? '';
+					this.htmlInput.value = typeof t == 'string' ? '' : (t?.textValue.toString() ?? '');
 				} else this.htmlInput.value = '';
 		}
 		blur() {}

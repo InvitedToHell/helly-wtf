@@ -11,6 +11,8 @@
 </script>
 
 <a title="made by @jassibuum">
-	<spline-viewer loading="eager" url="https://prod.spline.design/aghPxpUjHieumGOR/scene.splinecode"
+	<spline-viewer
+		loading-anim-type="spinner-small-light"
+		url="https://prod.spline.design/aghPxpUjHieumGOR/scene.splinecode"
 	></spline-viewer>
 </a>
