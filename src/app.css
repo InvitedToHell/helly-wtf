@@ -248,6 +248,7 @@ body {
 	width: 24px;
 	height: 24px;
 	margin-left: -12px;
+	margin-top: 22px;
 	border-left: 1px solid;
 	border-bottom: 1px solid;
 	-webkit-transform: rotate(-45deg);
