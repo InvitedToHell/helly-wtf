@@ -116,12 +116,12 @@ body {
 	}
 }
 
-.twitter:hover {
+.mastodon:hover {
 	color: white;
-	animation: twitter 1s ease-in-out infinite alternate;
+	animation: mastodon 1s ease-in-out infinite alternate;
 }
 
-@keyframes twitter {
+@keyframes mastodon {
 	from {
 		text-shadow:
 			0 0 10px #fff,

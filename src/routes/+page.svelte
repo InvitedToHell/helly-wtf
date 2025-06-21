@@ -120,12 +120,12 @@
 						<a href="https://github.com/invitedtohell">github</a>
 					</div>
 
-					<div class="twitter transform hover:text-white">
-						<a href="https://twitter.com/InvitedToHell">twitter</a>
+					<div class="mastodon transform hover:text-white">
+						<a href="https://social.catppuccin.com/@helly">mastodon</a>
 					</div>
 
 					<div class="email transform hover:text-white">
-						<a href="emailto:info@helly.wtf">email</a>
+						<a href="mailto:contact@pompomsoft.de">email</a>
 					</div>
 
 					<div class="planetmc transform hover:text-white">
@@ -144,6 +144,7 @@
 							<!-- User Avatar -->
 							<div class="flex flex-auto justify-left pl-5 items-left">
 								<div class="p-1">
+									<!-- svelte-ignore a11y-missing-attribute -->
 									<img
 										class="!w-20 !h-20 rounded-full mx-auto border-solid border-4"
 										style="border-color: {borderColor};"
@@ -168,6 +169,7 @@
 												{activity.name}
 											</p>
 											<div class="flex row-auto items-center">
+												<!-- svelte-ignore a11y-img-redundant-alt -->
 												<img
 													class="rounded-lg"
 													src="https://i.scdn.co/image/{activity.assets.large_image.split(':')[1]}"
